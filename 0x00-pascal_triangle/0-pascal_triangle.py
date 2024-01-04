@@ -1,20 +1,17 @@
 #!/usr/bin/python3
-'''Module defining pascal traingle function'''
+'''Module that defines pascal triangle'''
 
 
 def pascal_triangle(n):
-    '''Function to create pascale traingle of size n'''
+    '''Returns a list representing pascal triangle'''
     if n <= 0:
         return []
 
-    triangle = []
-    for row in range(0, n):
-        triangle.append([])
-        for col in range(0, row + 1):
-            if col == 0 or col == row:
-                triangle[row].append(1)
-            else:
-                triangle[row].append(triangle[row - 1][col]
-                                     + triangle[row - 1][col - 1])
-
+    triangle = [[1]]
+    for i in range(1, n):
+        row = [1]
+        for j in range(1, i):
+            row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
+        row.append(1)
+        triangle.append(row)
     return triangle
