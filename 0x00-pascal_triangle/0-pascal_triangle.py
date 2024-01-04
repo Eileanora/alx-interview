@@ -3,6 +3,8 @@
 
 def pascal_traingle(n):
     '''Function to create pascale traingle of size n'''
+    if n <= 0:
+        return []
     pascalTraingle = []
     for row in range(0, n):
         pascalTraingle.append([])
