@@ -2,7 +2,7 @@
 '''This module contains a function canUnlockAll'''
 
 
-def canUnlockAll(boxes=[[0]]):
+def canUnlockAll(boxes):
     '''Function that determines if all the boxes can be opened'''
     keys = list(boxes[0])
     opened_boxes = [False] * len(boxes)
@@ -21,4 +21,4 @@ def canUnlockAll(boxes=[[0]]):
                 if opened_boxes[new_key] is False:
                     keys.append(new_key)
 
-    return len(keys) == (len(boxes) - 1)
+    return all(opened_boxes)
