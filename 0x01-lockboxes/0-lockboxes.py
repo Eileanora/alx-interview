@@ -11,7 +11,9 @@ def canUnlockAll(boxes=[[0]]):
 
     for key in keys:
         if key >= len(boxes):
+            keys.remove(key)
             continue
+
         if opened_boxes[key] is False:
             # open the box
             opened_boxes[key] = True
