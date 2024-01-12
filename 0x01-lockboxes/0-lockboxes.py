@@ -17,6 +17,8 @@ def canUnlockAll(boxes):
             # open the box
             opened_boxes[key] = True
             for new_key in boxes[key]:
+                if new_key >= len(boxes):
+                    continue
                 if opened_boxes[new_key] is False:
                     keys.append(new_key)
 
