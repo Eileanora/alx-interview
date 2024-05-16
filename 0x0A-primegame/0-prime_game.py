@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 ''' Prime Game '''
-from math import sqrt
 
 
 def isWinner(x, nums):
